@@ -1,0 +1,17 @@
+{
+  "20260412_230136": {
+    "label": "Nearest Things to Find Nearby",
+    "saved_at": "2026-04-12 23:01",
+    "meal_messages": [],
+    "shop_messages": [
+      {
+        "role": "user",
+        "content": "find these near me"
+      },
+      {
+        "role": "assistant",
+        "content": "| Item | Store | Price | Size | Distance |\n|------|-------|-------|------|----------|\n| Salsa | Vons | $2.99 | 15.5 oz | 1.5 km |\n| Fries | Dollar General | $1.00 | \u2014 | \u2014 |\n| Shrimp | Vallarta Supermarkets | $4.99 | \u2014 | \u2014 |\n| Tomatoes | Ralphs | $2.99 | \u2014 | 0.5 km |\n| Onions | Vallarta Supermarkets | $0.69 | \u2014 | \u2014 |\n\nBest stores:\nBased on price + distance combined, Ralphs and Vons are recommended. These stores offer competitive prices on essential items, such as eggs (data not provided in price data), red tomatoes, and salsa, and have a relatively close distance of 0.5 km and 1.5 km, respectively, making them ideal options for those looking to save money without compromising on convenience."
+      }
+    ]
+  }
+}

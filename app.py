@@ -1,7 +1,8 @@
 import sys
 import os
+import json
+from datetime import datetime
 
-# Allow imports from the project root
 sys.path.insert(0, os.path.dirname(__file__))
 
 import streamlit as st
@@ -11,8 +12,81 @@ from config import MEAL_PLAN_PROMPT
 from agents import meal_agent, shopping_agent
 from services import apple_notes, vision
 
+HISTORY_FILE = os.path.join(os.path.dirname(__file__), "chat_history.json")
 
-# ── Groq client (cached — created once per session) ──────────────────────────
+
+# ── Chat history persistence ──────────────────────────────────────────────────
+
+def load_history() -> dict:
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE) as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
+
+
+def save_session(session_id: str, label: str, meal_msgs: list, shop_msgs: list):
+    history = load_history()
+    history[session_id] = {
+        "label": label,
+        "saved_at": datetime.now().strftime("%Y-%m-%d %H:%M"),
+        "meal_messages": meal_msgs,
+        "shop_messages": shop_msgs,
+    }
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+
+
+def generate_title(client, first_user_message: str) -> str:
+    try:
+        resp = client.chat.completions.create(
+            model="llama-3.1-8b-instant",
+            messages=[{
+                "role": "user",
+                "content": (
+                    "Give this chat a short title (4-6 words max, no quotes, no punctuation).\n\n"
+                    + first_user_message
+                ),
+            }],
+        )
+        return resp.choices[0].message.content.strip()[:50]
+    except Exception:
+        return first_user_message[:40]
+
+
+def autosave(client):
+    meal = st.session_state.get("meal_messages", [])
+    shop = st.session_state.get("shop_messages", [])
+    if not meal and not shop:
+        return
+
+    if "current_session_id" not in st.session_state:
+        st.session_state.current_session_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    if "session_title" not in st.session_state:
+        first_msg = (meal or shop)[0].get("content", "")
+        if isinstance(first_msg, list):
+            first_msg = next((p.get("text", "") for p in first_msg if p.get("type") == "text"), "Chat")
+        st.session_state.session_title = generate_title(client, first_msg)
+
+    save_session(
+        st.session_state.current_session_id,
+        st.session_state.session_title,
+        meal,
+        shop,
+    )
+
+
+def delete_session(session_id: str):
+    history = load_history()
+    history.pop(session_id, None)
+    with open(HISTORY_FILE, "w") as f:
+        json.dump(history, f, indent=2)
+
+
+# ── Groq client ───────────────────────────────────────────────────────────────
 
 @st.cache_resource
 def get_groq_client():
@@ -21,9 +95,10 @@ def get_groq_client():
 
 # ── Page config ───────────────────────────────────────────────────────────────
 
-st.set_page_config(page_title="Mise", page_icon="🍳", layout="centered")
-st.title("🍳 Mise")
-st.caption("From pantry to plate, at the best price possible.")
+st.set_page_config(page_title="Meal Map", page_icon="🗺️", layout="centered")
+
+st.title("🗺️ Meal Map")
+st.caption("Plan meals. Find the best prices nearby.")
 
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
@@ -38,6 +113,7 @@ with st.sidebar:
 
     st.markdown("---")
 
+    # ── Apple Notes ───────────────────────────────────────────────────────────
     if apple_notes.is_available():
         st.subheader("📝 Apple Notes")
         if st.button("Browse Notes"):
@@ -63,9 +139,34 @@ with st.sidebar:
 
         st.markdown("---")
 
-    if st.button("Clear conversation"):
+    # ── Chat history ──────────────────────────────────────────────────────────
+    st.subheader("💬 Saved Chats")
+
+    history = load_history()
+    if history:
+        for sid, session in sorted(history.items(), key=lambda x: x[1]["saved_at"], reverse=True):
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                if st.button(f"{session['label']}\n{session['saved_at']}", key=f"load_{sid}", use_container_width=True):
+                    st.session_state.meal_messages = session["meal_messages"]
+                    st.session_state.shop_messages = session["shop_messages"]
+                    st.session_state.current_session_id = sid
+                    st.session_state.session_title = session["label"]
+                    st.rerun()
+            with col2:
+                if st.button("🗑️", key=f"del_{sid}"):
+                    delete_session(sid)
+                    st.rerun()
+    else:
+        st.caption("No saved chats yet.")
+
+    st.markdown("---")
+
+    if st.button("New chat", use_container_width=True):
         st.session_state.meal_messages = []
         st.session_state.shop_messages = []
+        st.session_state.pop("current_session_id", None)
+        st.session_state.pop("session_title", None)
         st.rerun()
 
 
@@ -77,7 +178,7 @@ if "shop_messages" not in st.session_state:
     st.session_state.shop_messages = []
 
 
-# ── Shared helpers ────────────────────────────────────────────────────────────
+# ── Helpers ───────────────────────────────────────────────────────────────────
 
 def render_chat(messages: list):
     for msg in messages:
@@ -116,7 +217,7 @@ def location_guard() -> bool:
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 
-tab_meal, tab_shop = st.tabs(["🍳 Meal Planner", "🛒 Grocery Shopper"])
+tab_meal, tab_shop = st.tabs(["🍳 Meal Planner", "🛒 Price Finder"])
 
 
 # ── Meal Planner ──────────────────────────────────────────────────────────────
@@ -126,7 +227,7 @@ with tab_meal:
     render_chat(st.session_state.meal_messages)
 
     uploaded_image = st.file_uploader(
-        "📎 Attach a photo of your ingredients (optional)",
+        "Attach a photo of your ingredients (optional)",
         type=["jpg", "jpeg", "png", "webp"],
         key="meal_uploader",
     )
@@ -138,7 +239,6 @@ with tab_meal:
         notes_context = st.session_state.get("active_notes", "")
 
         if uploaded_image:
-            # Encode once — reuse for both display and analysis
             b64, mime = vision.encode_image(uploaded_image)
             data_url = f"data:{mime};base64,{b64}"
 
@@ -175,22 +275,29 @@ with tab_meal:
             meal_agent.run(client, st.session_state.meal_messages[:-1], system_prompt, full_message)
         )
         st.session_state.meal_messages.append({"role": "assistant", "content": response})
+        autosave(client)
 
 
-# ── Grocery Shopper ───────────────────────────────────────────────────────────
+# ── Price Finder ──────────────────────────────────────────────────────────────
 
 with tab_shop:
-    st.caption("I'll check your nearby stores and find real prices for you.")
+    st.caption("Find real prices from nearby stores for any ingredient.")
     if "active_notes" in st.session_state:
-        st.info(f"📝 Notes: {', '.join(st.session_state.active_note_names)}")
+        st.info(f"📝 Notes active: {', '.join(st.session_state.active_note_names)}")
 
     render_chat(st.session_state.shop_messages)
 
-    shop_input = st.chat_input("e.g. 'Find cheapest bulking ingredients near me'", key="shop_input")
-
     if not st.session_state.shop_messages:
-        if st.button("Find cheapest ingredients near me"):
+        if st.button("Find cheapest bulking ingredients near me"):
             shop_input = "Find me the cheapest high-calorie bulking ingredients near me."
+        else:
+            shop_input = None
+    else:
+        shop_input = None
+
+    typed_input = st.chat_input("e.g. 'tomato paste, rice, eggs'", key="shop_input")
+    if typed_input:
+        shop_input = typed_input
 
     if shop_input and location_guard():
         client = get_groq_client()
@@ -208,3 +315,4 @@ with tab_shop:
             shopping_agent.run(client, location, full_message, kroger_id, kroger_secret)
         )
         st.session_state.shop_messages.append({"role": "assistant", "content": response})
+        autosave(client)

@@ -32,10 +32,12 @@ def geocode(location: str) -> tuple[float, float] | None:
 def find_nearby_stores(lat: float, lng: float, radius_m: int = 5000) -> list[dict]:
     """Return grocery stores within radius_m metres, sorted by distance."""
     query = f"""
-    [out:json][timeout:15];
+    [out:json][timeout:20];
     (
-      node["shop"~"supermarket|grocery|convenience|department_store"](around:{radius_m},{lat},{lng});
-      way["shop"~"supermarket|grocery"](around:{radius_m},{lat},{lng});
+      node["shop"~"supermarket|grocery|department_store|wholesale|variety_store|discount|general"](around:{radius_m},{lat},{lng});
+      way["shop"~"supermarket|grocery|wholesale|variety_store|discount|general"](around:{radius_m},{lat},{lng});
+      node["brand"~"Walmart|Aldi|Costco|Target|Whole Foods|Trader Joe|Sprouts|Smart & Final|Food 4 Less|Stater Bros|WinCo|H Mart|Vallarta"](around:{radius_m},{lat},{lng});
+      way["brand"~"Walmart|Aldi|Costco|Target|Whole Foods|Trader Joe|Sprouts|Smart & Final|Food 4 Less|Stater Bros|WinCo|H Mart|Vallarta"](around:{radius_m},{lat},{lng});
     );
     out center;
     """

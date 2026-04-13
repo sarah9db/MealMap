@@ -2,7 +2,7 @@ import re
 import time
 
 from config import TEXT_MODEL, SHOPPING_SYNTHESIS_PROMPT
-from services import osm, trader_joes, kroger, flipp
+from services import osm, kroger, flipp
 
 
 _DEFAULT_ITEMS = ["eggs", "rice", "oats", "peanut butter", "chicken breast", "pasta", "olive oil"]
@@ -41,7 +41,7 @@ def run(client, location: str, user_message: str, kroger_client_id: str = "", kr
     stores_with_dist: list[dict] = []
     if coords:
         yield ("status", "Finding nearby grocery stores...")
-        stores_with_dist = osm.find_nearby_stores(coords[0], coords[1], radius_m=5000)[:8]
+        stores_with_dist = osm.find_nearby_stores(coords[0], coords[1], radius_m=5000)[:15]
 
     if stores_with_dist:
         store_names = [s["name"] for s in stores_with_dist]
@@ -60,16 +60,7 @@ def run(client, location: str, user_message: str, kroger_client_id: str = "", kr
     all_results: list[str] = []
     found_items: set[str] = set()  # tracks items that got at least one real price
 
-    # ── Step 3: Trader Joe's (direct GraphQL API) ────────────────────────────
-    yield ("status", "Querying Trader Joe's...")
-    for item in items:
-        result = trader_joes.search(item)
-        all_results.append(f"=== {item} at Trader Joe's ===\n{result}")
-        if "price not listed" not in result and "failed" not in result and "No Trader" not in result:
-            found_items.add(item)
-        time.sleep(0.2)
-
-    # ── Step 4: Flipp (other stores' flyers) ────────────────────────────────
+    # ── Step 3: Flipp (store flyers) ────────────────────────────────────────
     for item in items:
         yield ("status", f"Checking flyers: {item}...")
         raw = flipp.search(item, zip_code)

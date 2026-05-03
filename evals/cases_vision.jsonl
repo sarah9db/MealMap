@@ -1,0 +1,6 @@
+# Add one JSON object per image case. Use absolute paths, or paths relative to the repo root.
+# Example:
+# {"id":"vision_fridge_basic_1","image_path":"evals/images/fridge_basic.jpg","mode":"ingredients","assert":{"must_include_any":["eggs","milk","bananas"],"allowed_ingredients":["eggs","milk","bananas"],"must_not_include":["salmon","steak"],"min_chars":20}}
+#
+# For grocery-list screenshots/photos, use mode="grocery_list":
+# {"id":"vision_list_basic_1","image_path":"evals/images/grocery_list.jpg","mode":"grocery_list","assert":{"must_include_any":["eggs","rice"],"must_not_include":["recipe"],"min_chars":10}}

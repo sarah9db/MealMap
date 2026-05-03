@@ -26,3 +26,31 @@ def analyze_ingredients(client, b64: str, mime: str) -> str:
         }],
     )
     return response.choices[0].message.content
+
+
+def extract_grocery_list(client, b64: str, mime: str) -> str:
+    """
+    Use vision model to extract a grocery list (items) from an image.
+    Returns plain text (one item per line) on success; returns "" on failure.
+    """
+    try:
+        response = client.chat.completions.create(
+            model=VISION_MODEL,
+            messages=[{
+                "role": "user",
+                "content": [
+                    {"type": "image_url", "image_url": {"url": f"data:{mime};base64,{b64}"}},
+                    {
+                        "type": "text",
+                        "text": (
+                            "This image contains a grocery list or shopping list. "
+                            "Extract the grocery items. Return ONE ITEM PER LINE. "
+                            "No bullets, no numbering, no commentary."
+                        ),
+                    },
+                ],
+            }],
+        )
+        return response.choices[0].message.content.strip()
+    except Exception:
+        return ""

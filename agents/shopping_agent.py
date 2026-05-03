@@ -7,10 +7,19 @@ from services import osm, kroger, flipp
 
 _DEFAULT_ITEMS = ["eggs", "rice", "oats", "peanut butter", "chicken breast", "pasta", "olive oil"]
 _DEFAULT_STORES = ["Ralphs", "Trader Joe's", "Whole Foods"]
+_PRICE_RE = re.compile(r"\$\s*(\d+(?:\.\d{2})?)")
 
 
 def _extract_items(client, user_message: str) -> list[str]:
     """Ask LLM to pull grocery items from the user's message."""
+    simple_items = [
+        re.sub(r"^[\-\*\d\.\s]+", "", part).strip()
+        for part in re.split(r"[,;\n]", user_message)
+    ]
+    simple_items = [i for i in simple_items if i and len(i.split()) <= 4]
+    if 1 <= len(simple_items) <= 10:
+        return simple_items
+
     try:
         resp = client.chat.completions.create(
             model=TEXT_MODEL,
@@ -31,6 +40,77 @@ def _extract_items(client, user_message: str) -> list[str]:
         return items[:10] or _DEFAULT_ITEMS
     except Exception:
         return _DEFAULT_ITEMS
+
+
+def _distance_for_store(store: str, stores_with_dist: list[dict]) -> str:
+    for s in stores_with_dist:
+        name = str(s.get("name", ""))
+        if name.lower() == store.lower():
+            return f"{s.get('distance_km')} km"
+    for s in stores_with_dist:
+        name = str(s.get("name", ""))
+        if name.lower() in store.lower() or store.lower() in name.lower():
+            return f"{s.get('distance_km')} km"
+    return "—"
+
+
+def _parse_price_blocks(price_blocks: list[str]) -> dict[str, list[dict]]:
+    parsed: dict[str, list[dict]] = {}
+    current_item = ""
+    for block in price_blocks:
+        for raw_line in block.splitlines():
+            line = raw_line.strip()
+            if not line:
+                continue
+            header = re.match(r"^===\s*(.*?)\s*(?:\(|at\b|===)", line)
+            if header:
+                current_item = header.group(1).strip()
+                parsed.setdefault(current_item, [])
+                continue
+            if not current_item or ":" not in line or "—" not in line:
+                continue
+            store, rest = line.split(":", 1)
+            name, price_part = rest.split("—", 1)
+            price_match = _PRICE_RE.search(price_part)
+            if not price_match:
+                continue
+            price = f"${float(price_match.group(1)):.2f}"
+            size = price_part[price_match.end():].strip(" /")
+            parsed.setdefault(current_item, []).append({
+                "store": store.strip(),
+                "name": name.strip(),
+                "price": price,
+                "price_num": float(price_match.group(1)),
+                "size": size or "—",
+            })
+    return parsed
+
+
+def _build_price_response(items: list[str], stores_with_dist: list[dict], price_blocks: list[str]) -> str:
+    parsed = _parse_price_blocks(price_blocks)
+    rows = ["| Item | Store | Price | Size | Distance |", "|------|-------|-------|------|----------|"]
+    best_stores: dict[str, int] = {}
+
+    for item in items:
+        options = parsed.get(item, [])
+        best = min(options, key=lambda r: r["price_num"]) if options else None
+        if not best:
+            rows.append(f"| {item} | — | — | — | — |")
+            continue
+        best_stores[best["store"]] = best_stores.get(best["store"], 0) + 1
+        rows.append(
+            f"| {item} | {best['store']} | {best['price']} | {best['size']} | "
+            f"{_distance_for_store(best['store'], stores_with_dist)} |"
+        )
+
+    if best_stores:
+        ranked = sorted(best_stores.items(), key=lambda kv: kv[1], reverse=True)
+        store_text = ", ".join(store for store, _count in ranked[:2])
+        best_section = f"Best stores: {store_text}."
+    else:
+        best_section = "Best stores: No exact nearby prices found for these items."
+
+    return "\n".join(rows) + "\n\n" + best_section
 
 
 def run(client, location: str, user_message: str, kroger_client_id: str = "", kroger_client_secret: str = ""):
@@ -88,6 +168,10 @@ def run(client, location: str, user_message: str, kroger_client_id: str = "", kr
 
     # ── Step 6: LLM synthesis ────────────────────────────────────────────────
     yield ("status", "Building price comparison...")
+    if all_results:
+        yield ("done", _build_price_response(items, stores_with_dist, all_results))
+        return
+
     synthesis_prompt = SHOPPING_SYNTHESIS_PROMPT.format(
         location=location,
         stores_summary=stores_summary,

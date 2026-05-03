@@ -1,17 +1,110 @@
 {
-  "20260412_230136": {
-    "label": "Nearest Things to Find Nearby",
-    "saved_at": "2026-04-12 23:01",
+  "20260425_172954": {
+    "label": "Meal Prep for a Busy Week",
+    "saved_at": "2026-04-25 18:28",
+    "meal_messages": [
+      {
+        "role": "user",
+        "content": "help me meal prep for 4 meals "
+      },
+      {
+        "role": "assistant",
+        "content": "Here's a meal prep plan using the provided ingredients and incorporating your love for spicy food:\n\n**Meal 1: Korean-Style Shrimp Fried Rice (approx. 540 calories per serving)**\n\n* 2 cups Cooked basmati rice\n* 1 cup Shrimp ( diced)\n* 1/4 cup Chorizo (diced)\n* 2 tablespoons Gochujang\n* 2 eggs, beaten\n* 1 teaspoon soy sauce\n* 1 teaspoon sesame oil\n* Salt and pepper to taste\n\nCombine cooked rice, shrimp, chorizo, gochujang, and beaten eggs in a large skillet. Stir-fry until combined and cook to desired doneness. Serve.\n\n**Meal 2: Jalape\u00f1o Chicken and Sausage Sloppy Joe (approx. 620 calories per serving)**\n\n* 1 cup Chorizo\n* 1 cup Shaved beef\n* 1 cup Kidney beans\n* 2 cups Sloppy Joe sauce\n* 4 Jalape\u00f1os, chopped\n* 4 hamburger buns (use bread)\n* Shredded cheese (use cottage cheese blended with butter)\n\nGrill chorizo and beef. Combine with Sloppy Joe sauce, kidney beans, and chopped jalape\u00f1os in a slow cooker or Dutch oven. Serve on hamburger buns topped with cheese mixture.\n\n**Meal 3: Thai-Style Tuna and Vegetable Stir-Fry (approx. 450 calories per serving)**\n\n* 1 can Tuna (drained and flaked)\n* 2 cups Carrots (peeled and chopped)\n* 1/4 cup Chopped peanuts (use peanut butter for sauce)\n* 2 tablespoons Harissa\n* 2 tablespoons soy sauce\n* 2 eggs, beaten\n\nCombine tuna, carrots, peanuts, and harissa in a wok or large skillet. Stir-fry until heated through. Add beaten eggs and scramble to combine.\n\n**Meal 4: Breakfast Burrito Casserole (approx. 560 calories per serving)**\n\n* 8 eggs\n* 1 cup Shaved beef\n* 1 cup Chorizo\n* 1 cup Kidney beans\n* 1 cup shredded cheese (use cottage cheese blended with butter)\n* 4 whole wheat flour tortillas\n* Chopped Jalape\u00f1os (for topping)\n\nCombine eggs, shaved beef, chorizo, and kidney beans in a large skillet. Cook to desired doneness. Wrap in tortillas, top with cheese mixture, and bake in the oven until golden brown. Top with chopped jalape\u00f1os.\n\nNote: You can adjust portion sizes based on individual caloric needs."
+      },
+      {
+        "role": "user",
+        "content": "something else"
+      },
+      {
+        "role": "assistant",
+        "content": "Let's plan your weekly meals using the ingredients you provided. Since you love spicy food, I'll incorporate that into the meal ideas. Here are 5 meal plans for you, each making 6 servings:\n\n### Monday\n**Spicy Shrimp and Chorizo Fried Rice** (640 calories/serving)\n- Cook chorizo, diced shrimp, and basmati rice in a wok with oil, soy sauce, and diced carrots. Add soy sauce, salt, and pepper to taste. Mix in chopped scallions as a garnish.\n\n### Tuesday\n**Sloppy Joe Chicken Nuggets** (560 calories/serving)\n- Bake seasoned chicken nuggets with sloppy joe sauce and diced tomatoes with habanero. Serve with a side of steamed carrots and butter.\n\n### Wednesday\n**Indian-Style Beef Curry** (720 calories/serving)\n- Cook shredded beef with coconut oil, curry powder, cumin, coriander, and cayenne pepper. Serve with a side of brown basmati rice and whole wheat naan bread.\n\n### Thursday\n**Thai-Style Spicy Tuna Salad** (440 calories/serving)\n- Mix canned tuna with diced carrots, crushed peanuts, soy sauce, cilantro, chili flakes, and a splash of lime juice. Serve with a side of steamed bok choy or mixed greens.\n\n### Friday\n**Spicy Beef Quesadillas** (640 calories/serving)\n- Cook shredded beef with diced onions, cumin, chili powder, and cayenne pepper. Mix with shredded cheese and stuff inside tortillas. Cook quesadillas in a pan with butter and serve with a side of steamed basmati rice.\n\n### What to add?\nConsidering your ingredients, I think a great addition would be Greek yogurt or raita to balance the spiciness of the meals. Additionally, some chopped fresh cilantro and scallions would enhance the flavors.\n\nFeel free to modify or swap any ingredients based on your personal preferences. Have a great week of batch cooking!"
+      },
+      {
+        "role": "user",
+        "content": "good job, give me a few more ideas"
+      },
+      {
+        "role": "assistant",
+        "content": "Based on the ingredients you have, I'll suggest 3 additional meal ideas with estimated calories per serving:\n\n### Meal 1: Spicy Chicken and Chorizo Fajita\n- 1 lb Shrimp and 1 lb Chicken breast\n- 1/4 cup chopped Chorizo\n- 1 cup diced Carrots\n- 2 cups mixed greens\n- 2 cups diced tomatoes\n- 1 tsp ground Cumin\n- 1 tsp Chili powder\n- 1/2 tsp Cayenne pepper\n- Salt and pepper to taste\n\nCook in large skillet, serve with warm flour tortillas (400-500 calories per serving).\n\n### Meal 2: Indian-Style Shrimp and Vegetable Curry\n- 1 lb Shrimp\n- 1 cup diced Carrots\n- 1 cup diced Kidney beans\n- 1 cup diced Chorizo\n- 2 cups diced tomatoes\n- 2 tbsp Ghee or butter\n- 2 tsp Curry powder\n- 1 tsp Turmeric\n- Salt and pepper to taste\n- Fresh cilantro for garnish\n\nBake in the oven or cook in a large skillet (550-650 calories per serving).\n\n### Meal 3: Asian-Style Beef and Vegetable Stir Fry\n- 1 lb Shaved beef\n- 1 cup diced Carrots\n- 1 cup diced green onions\n- 2 cups diced mixed vegetables (bell peppers, broccoli, etc.)\n- 2 tbsp Soy sauce\n- 2 tbsp Oyster sauce (optional)\n- 1 tsp Chili garlic paste\n- Salt and pepper to taste\n\nStir-fry in a large skillet with rice (500-600 calories per serving).\n\nNote: You can adjust portion sizes and ingredient quantities to meet your specific calorie needs and preferences."
+      },
+      {
+        "role": "user",
+        "content": "some more"
+      },
+      {
+        "role": "assistant",
+        "content": "Based on your available ingredients, here's a 5-day meal prep plan for you, with approximately 500-700 calories per serving, prioritizing nutrient-dense meals and incorporating spicy flavors.\n\n**Day 1: Monday**\n\n* **Spicy Beef and Chorizo Fried Rice**: Cook basmati rice and let it cool. Then, mix cooked shrimp, diced chorizo, chopped chorizo, diced carrots, scrambled eggs, and add gochujang to taste.\n\t+ Calories per serving: 650\n* **Side**: Carrot and Cucumber Salad with creamy peanut butter dressing\n\n**Day 2: Tuesday**\n\n* **Chicken Nugget Fajitas**: Pan-fry chicken nuggets, then serve with saut\u00e9ed diced onions, crushed tomatoes with habanero, and serve with a side of whole wheat flour tortillas.\n\t+ Calories per serving: 550\n* **Side**: Mexican Street Corn (grilled corn on the cob with mayonnaise and chili powder)\n\n**Day 3: Wednesday**\n\n* **Indian-Style Shrimp and Vegetable Curry**: Cook diced shrimp with a mixture of crushed tomatoes with habanero, chopped carrots, cooked basmati rice, and add a splash of mayonnaise to enrich the sauce. Top with cilantro.\n\t+ Calories per serving: 620\n* **Side**: Naan Bread with ghee butter\n\n**Day 4: Thursday**\n\n* **Spicy Sloppy Joe Pasta**: Cook whole wheat flour pasta and mix with cooked sloppy joe sauce, diced carrots, crushed tomatoes with habanero, and serve with a side of grated Parmesan cheese.\n\t+ Calories per serving: 640\n* **Side**: Green Salad with creamy mayo and diced bananas\n\n**Day 5: Friday**\n\n* **Thai-Style Chicken and Shrimp Stir-Fry**: Cook diced chicken nuggets and mixed with cooked shrimp, mixed veggies (carrots, beans), and a spicy Thai sauce made with gochujang, harissa, and soy sauce. Serve with steamed basmati rice.\n\t+ Calories per serving: 680\n\n**Bonus**: For a quick snack or breakfast, make Cottage Cheese with sliced bananas and a pinch of cinnamon. Approximate calories per serving: 250"
+      },
+      {
+        "role": "user",
+        "content": "more"
+      },
+      {
+        "role": "assistant",
+        "content": "Based on the provided ingredients, here's a weekly meal prep plan covering various cuisines, taking into account your love for spicy food and the requirement for high-calorie, nutrient-dense meals.\n\n### Meal 1: Spicy Shrimp Fajitas (Mexican)\n\n* 1 lb Shrimp, sliced\n* 1/2 cup Chorizo, sliced\n* 1 cup Basmati rice\n* 1 cup Kidney beans\n* 1/4 cup diced Jalape\u00f1os\n* 2 tbsp Chili powder\n* 1 tsp cayenne pepper\n* Salt and pepper to taste\n* Cooking oil for frying\n\nBatch cook: Marinate shrimp and chorizo in chili powder, cayenne pepper, and diced Jalape\u00f1os for 30 minutes. Cook with oil and serve with Basmati rice and kidney beans. Estimated calories per serving: 540\n\n### Meal 2: Chicken Nugget & Sloppy Joe Casserole (American)\n\n* 1 pack Chicken nuggets\n* 1 cup Sloppy Joe sauce\n* 1 cup diced Carrots\n* 1 cup diced Bread\n* 1 cup Shredded cheese\n* 2 tbsp Butter\n* 1 cup Crushed tomatoes with habanero\n\nBatch cook: Cook chicken nuggets according to package instructions, then mix with sloppy joe sauce, diced carrots, and bread. Add shredded cheese, butter, and crushed tomatoes with habanero on top. Bake until golden brown. Estimated calories per serving: 620\n\n### Meal 3: Spicy Tuna & Peanut Noodle Stir-Fry (Asian)\n\n* 1 can Tuna\n* 1/4 cup Peanut butter\n* 1 cup Whole wheat flour noodles\n* 2 tbsp Soy sauce (not listed but assumed)\n* 1 tsp Gochujang\n* 1 tsp cayenne pepper\n* 1 cup diced Carrots\n* Chopped Bananas (optional)\n\nBatch cook: Cook noodles according to package instructions. Mix tuna with peanut butter, soy sauce, gochujang, cayenne pepper, and diced carrots. Combine with cooked noodles and serve. Estimated calories per serving: 520\n\n### Meal 4: Indian-Style Shaved Beef & Vegetable Curry\n\n* 1 lb Shaved beef\n* 1 cup Cottage cheese\n* 1 cup Basmati rice\n* 1 cup diced Carrots\n* 1/4 cup harissa\n* 2 tbsp Butter\n\nBatch cook: Cook shaved beef with diced carrots and harissa. Mix with cottage cheese and Basmati rice. Cook and serve. Estimated calories per serving: 580\n\n### Meal 5: Mexican-Style Breakfast Burritos\n\n* 6 Eggs\n* 1 cup Shredded cheese\n* 1/2 cup Chorizo, cooked\n* 1 cup shredded Cottage cheese\n* 6 Tacos-sized Bread\n\nBatch cook: Cook eggs, chorizo, shredded cheese, and shredded cottage cheese separately. Assemble burritos with scrambled eggs, chorizo, cheese, and cottage cheese, wrapped in tacos-sized bread. Estimated calories per serving: 420\n\nThis meal prep plan includes a variety of cuisines, high-calorie, nutrient-dense meals, and incorporates your love for spicy food."
+      },
+      {
+        "role": "user",
+        "content": "add a desert too"
+      },
+      {
+        "role": "assistant",
+        "content": "### Meal Prep Plan for Next Week\n\nGiven your preferences for high-calorie, nutrient-dense meals, spicy flavors, and batch cooking, I've prepared a meal plan covering different cuisines:\n\n**Monday: Spicy Shrimp Fajitas (Mexican)**\n\n- 1 lb Shrimp (30g protein, 120 calories)\n- 1/2 cup Basmati rice (100 calories)\n- 1/2 cup sliced chorizo (250 calories)\n- 2 habaneros (chopped, 2g sugar, 20 calories)\n- Salt, pepper, and chili powder to taste\n- Total calories per serving: 390 calories (6.5 Servings)\n\n**Tuesday: Harissa Chicken Nugget Bake (American)**\n\n- 1.5 lbs Chicken nuggets (60g protein, 350 calories)\n- 1/4 cup Harissa sauce (200 calories)\n- 1 cup Shredded cheddar cheese (200 calories)\n- 2 slices of bread (100 calories)\n- Total calories per serving: 750 calories (4 servings)\n\n**Wednesday: Chicken and Shaved Beef Curry (Indian)**\n\n- 1.5 lbs shredded beef (40g protein, 300 calories)\n- 1 cup Chicken (40g protein, 200 calories)\n- 1 cup Basmati rice (100 calories)\n- 2 tbsp Ghee or butter (400 calories)\n- 1 cup crushed tomatoes with habanero (150 calories)\n- 1 tsp Garam masala\n- Total calories per serving: 950 calories (5 servings)\n\n**Thursday: Tuna and Peanut Butter Salad (American)**\n\n- 2 Tuna cans (60g protein, 300 calories)\n- 1/4 cup peanut butter (200 calories)\n- 2 cups mixed greens (20 calories)\n- 1 cup mixed vegetables (50 calories)\n- 2 tbsp Mayo (190 calories)\n- Salt, pepper, and chili powder to taste\n- Total calories per serving: 660 calories (4 servings)\n\n**Friday: Spicy Shaved Beef and Egg Breakfast Burritos (American)**\n\n- 1.5 lbs shredded beef (40g protein, 300 calories)\n- 6 eggs (30g protein, 120 calories)\n- 1 cup shredded cheddar cheese (200 calories)\n- 2 cups cooked basmati rice (200 calories)\n- 2 tortillas\n- 2 habaneros (chopped, 2g sugar, 20 calories)\n- Total calories per serving: 740 calories (5.5 servings)\n\n**Dessert:** Peanut Butter Banana Pudding\n\n- 2 cups Cottage cheese (200 calories)\n- 1 cup Peanut butter (200 calories)\n- 2 cups milk (200 calories)\n- 2 bananas (150 calories)\n- 2 tbsp honey or maple syrup (120 calories)\n- Total calories per serving: 770 calories (4.5 servings)\n\nThis meal prep plan offers a balance of protein, carbohydrates, and healthy fats while incorporating your preferred flavors and ingredients."
+      },
+      {
+        "role": "user",
+        "content": "suggest another desert"
+      },
+      {
+        "role": "assistant",
+        "content": "With the provided ingredients, I can suggest a few meal ideas and a dessert option. Here's an updated list with additional suggestions and a desert idea:\n\n### Meal Suggestions\n\n1. **Spicy Chorizo and Shrimp Fajitas** (600 cal/serving) - Cook chorizo, shrimp, diced tomatoes with habanero, and basmati rice. Add a sprinkle of cayenne pepper for extra heat.\n2. **Cottage Cheese and Egg Curry** (350 cal/serving) - Mix cottage cheese with diced carrots, curry powder, and a dash of cayenne pepper. Serve with scrambled eggs and whole wheat naan (made with whole wheat flour and butter).\n3. **Korean-Style BBQ Beef** (700 cal/serving) - Marinate shaved beef in gochujang, soy sauce, and sesame oil. Grill and serve with steamed basmati rice and roasted carrots.\n4. **Spicy Tuna Cakes** (450 cal/serving) - Mix canned tuna with diced jalape\u00f1os, mayo, and chopped onions. Shape into patties and pan-fry until crispy. Serve with a side of crushed tomatoes and basmati rice.\n5. **Breakfast Burritos** (400 cal/serving) - Scramble eggs, cook chorizo and diced tomatoes with habanero, and wrap in whole wheat tortillas with shredded cheese and a dollop of sour cream (made from milk).\n\n### Dessert Suggestion\n\n1. **Banana Oat Bread** (300 cal/serving) - Mix mashed bananas with peanut butter, whole wheat flour, eggs, and a pinch of salt. Add a sprinkle of cinnamon and bake in a loaf pan until golden brown.\n\nThese meal suggestions and the banana oat bread dessert idea should provide a good starting point for your meal prep. Enjoy!"
+      }
+    ],
+    "shop_messages": [],
+    "location": "92037",
+    "active_notes": "Here are my notes:\n\n### Next week\nNext week\n\nBasmati rice \nKidney beans \nShrimp \nChorizo\nBread \nChicken nuggets \nCottage cheese \nEggs \nShaved beef\nCrushed tomatoes \nTuna \nMilk\nCarrots \nPeanut butter \nButter \nWhole wheat flour\nBananas \nMayo\nSloppy Joe sauce \nDiced tomatoes with habanero",
+    "active_note_names": [
+      "Next week"
+    ]
+  },
+  "20260503_011950": {
+    "label": "Quick Dinner Ideas for You",
+    "saved_at": "2026-05-03 01:19",
     "meal_messages": [],
     "shop_messages": [
       {
         "role": "user",
-        "content": "find these near me"
+        "content": "what do I make "
       },
       {
         "role": "assistant",
-        "content": "| Item | Store | Price | Size | Distance |\n|------|-------|-------|------|----------|\n| Salsa | Vons | $2.99 | 15.5 oz | 1.5 km |\n| Fries | Dollar General | $1.00 | \u2014 | \u2014 |\n| Shrimp | Vallarta Supermarkets | $4.99 | \u2014 | \u2014 |\n| Tomatoes | Ralphs | $2.99 | \u2014 | 0.5 km |\n| Onions | Vallarta Supermarkets | $0.69 | \u2014 | \u2014 |\n\nBest stores:\nBased on price + distance combined, Ralphs and Vons are recommended. These stores offer competitive prices on essential items, such as eggs (data not provided in price data), red tomatoes, and salsa, and have a relatively close distance of 0.5 km and 1.5 km, respectively, making them ideal options for those looking to save money without compromising on convenience."
+        "content": "**Price Comparison Table**\n| Item | Store | Price | Size | Distance |\n|------|-------|-------|------|----------|\n| Shrimp | Vons | $6.99 | waterfront BISTRO\u00ae Raw Extra Jumbo Shrimp EZ Peel Shell & Tail On | 3.5 km |\n| Chorizo | Ralphs | $5.00 | Cacique Chorizo | 0.5 km |\n| Bread | Pavilions | $2.99 | Oroweat Bread | 1.66 km |\n| Bread | Pavilions | $2.99 | Old World Sourdough Breads | 1.66 km |\n| Chicken nuggets | Sprouts Farmers Market | $8.99 | Frozen Chicken Tenders, Patties, Nuggets or Buffalo-Style Bites | 4.14 km |\n| Cottage cheese | Vons | $1.69 | Lucerne\u00ae Cottage Cheese 16 oz. or Knudsen Sour Cream 16 oz. | 4.05 km |\n| Eggs | Ralphs | $2.99 | 12 ct (not provided) | 0.5 km |\n| Shaved beef | Ralphs | $5.00 | Kroger Beef Shaved Steak | 0.5 km |\n| Crushed tomatoes | Pavilions | $4.00 | Mutti Crushed Tomatoes | 1.66 km |\n| Basmati rice | Ralphs | $1.99 | Kroger 90 Second Basmati Rice Pouch / 8.8 oz | 0.5 km |\n| Basmati rice | Ralphs | $3.99 | Mahatma Basmati Rice, Long Grain Rice, Uncooked Rice, 32 oz (907g) | 0.5 km |\n| Kidney beans | Ralphs | $0.89 | Simple Truth Organic Low Sodium Dark Red Kidney Beans / 15 oz | 0.5 km |\n| Kidney beans | Ralphs | $1.09 | Kroger Dark Red Kidney Beans / 15.5 oz | 0.5 km |\n\n**Best Stores**\nBased on the price comparison, I recommend shopping at Pavilions and Ralphs. Pavilions offers the cheapest options for bread, with a price of $2.99 for both Oroweat Bread and Old World Sourdough Breads. Ralphs is the cheapest option for a variety of items, including Chorizo, Eggs, Shaved beef, Basmati rice, and Kidney beans. Additionally, Ralphs has a convenient location, being only 0.5 km away from our location."
       }
+    ],
+    "location": "92037",
+    "active_notes": "Here are my notes:\n\n### Next week\nNext week\n\nBasmati rice \nKidney beans \nShrimp \nChorizo\nBread \nChicken nuggets \nCottage cheese \nEggs \nShaved beef\nCrushed tomatoes \nTuna \nMilk\nCarrots \nPeanut butter \nButter \nWhole wheat flour\nBananas \nMayo\nSloppy Joe sauce \nDiced tomatoes with habanero",
+    "active_note_names": [
+      "Next week"
+    ]
+  },
+  "20260503_111316": {
+    "label": "Meal Planning for the Month Ahead",
+    "saved_at": "2026-05-03 11:13",
+    "meal_messages": [
+      {
+        "role": "user",
+        "content": "help me plan my meals for the next month"
+      },
+      {
+        "role": "assistant",
+        "content": "**Weekly Meal Plan for 92037 Locals**\n\nConsidering your ingredients, here's a 4-day meal plan with estimated calories per serving:\n\n**Day 1: Monday - Spicy Shrimp and Chorizo Fiesta**\n\n- **Shrimp Fajita Casserole (5 servings, 550 calories/serving)**\n  * 1 lb Shrimp, 1 Chorizo, 1 cup Basmati rice, 1 cup mixed veggies (carrots, diced tomatoes), 1/4 cup chopped cilantro, 2 tbsp olive oil, salt, pepper, cayenne pepper\n- **Spicy Sloppy Joe Wrap (5 servings, 500 calories/serving)**\n  * 1 cup Sloppy Joe sauce, 5 chicken nuggets, 5 wheat bread slices, mayonnaise, lettuce, diced tomatoes\n\n**Day 2: Tuesday - Shrimp and Rice Bowl with Spicy Kick**\n\n- **Spicy Shrimp and Veggie Stir-Fry (5 servings, 450 calories/serving)**\n  * 1 lb Shrimp, 1 cup basmati rice, 1 cup mixed veggies (carrots, diced tomatoes), 2 tbsp butter, 1 tsp harissa, salt, pepper\n- **Carrot and Cottage Cheese Snack (5 servings, 150 calories/serving)**\n  * 5 carrots, 1 cup cottage cheese, 1 tsp honey\n\n**Day 3: Wednesday - Chorizo and Egg Scramble**\n\n- **Chorizo and Egg Scramble (5 servings, 350 calories/serving)**\n  * 1 Chorizo, 6 eggs, 1 cup mixed veggies (carrots, diced tomatoes), salt, pepper, 1 tsp cayenne pepper\n- **Banana and Peanut Butter Smoothie (5 servings, 200 calories/serving)**\n  * 5 bananas, 1/4 cup peanut butter, 1 cup milk, ice\n\n**Day 4: Thursday - Shrimp and Veggie Wrap**\n\n- **Shrimp and Veggie Wrap (5 servings, 400 calories/serving)**\n  * 1 lb Shrimp, 5 wheat bread slices, 1 cup mixed veggies (carrots, diced tomatoes), mayonnaise, lettuce, diced tomatoes\n- **Tuna Salad (5 servings, 300 calories/serving)**\n  * 1 can tuna, 1/4 cup mayonnaise, 1/4 cup diced onions, salt, pepper\n\n**Next Steps**\n\n* Repurpose the leftover ingredients to create new meals.\n* Incorporate the rest of the ingredients into future meal plans.\n* Consider adding protein sources (chicken, beef, tofu) to mix up the meals.\n* Feel free to adjust the spice levels to your taste."
+      }
+    ],
+    "shop_messages": [],
+    "location": "92037",
+    "active_notes": "Here are my notes:\n\n### Next week\nNext week\n\nBasmati rice \nKidney beans \nShrimp \nChorizo\nBread \nChicken nuggets \nCottage cheese \nEggs \nShaved beef\nCrushed tomatoes \nTuna \nMilk\nCarrots \nPeanut butter \nButter \nWhole wheat flour\nBananas \nMayo\nSloppy Joe sauce \nDiced tomatoes with habanero",
+    "active_note_names": [
+      "Next week"
     ]
   }
 }
